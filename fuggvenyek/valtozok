@@ -1,0 +1,13 @@
+#!/bin/bash
+A=0
+B=10
+f () {
+ echo "Függvény kezdete: A=$A B=$B"
+ A=1
+ local B=11
+ echo "Függvény vége:    A=$A B=$B"
+}
+
+echo "Program kezdete:  A=$A B=$B"
+f
+echo "Program vége:     A=$A B=$B"

@@ -1,0 +1,7 @@
+#!/bin/bash
+while [ $1 ]
+do
+ STRING=$STRING$1
+ shift
+done
+echo $STRING

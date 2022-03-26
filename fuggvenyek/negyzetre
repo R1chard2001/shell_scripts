@@ -1,0 +1,16 @@
+#!/bin/bash
+szamol() {
+ if [ $# -ne 1 ]
+ then
+  return 0
+ fi
+ return $(($1*$1))
+}
+N=$1
+if [ ! $N ]
+then
+ N=9
+fi
+szamol $N
+EREDMENY=$?
+echo $EREDMENY

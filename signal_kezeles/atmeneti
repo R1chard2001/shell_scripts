@@ -1,0 +1,14 @@
+#!/bin/bash
+TMPFILE="/tmp/atmeneti-$$.tmp"
+trap exit_handler EXIT
+exit_handler() {
+ echo "Átmeneti fájl törlése!"
+ rm $TMPFILE
+}
+
+touch $TMPFILE
+for i in $(seq 1 1 1000)
+do
+ echo "$i  $$"
+ sleep 5
+done

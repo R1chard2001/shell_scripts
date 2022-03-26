@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "A program tulajdonságai:"
+echo " - név: $0"
+echo " - PID: $$"
+echo " - paraméterek száma: $#"
+echo -e " - paraméterlista:\n$@"
+echo " - ezek egyenként:"
+for P in $@
+do
+ echo "   - $P"
+done
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+fact () {
+ if [ $1 -gt 1 ]
+ then
+  i=$(($1 - 1))
+  j=$(fact $i)
+  k=$(($1*$j))
+  echo $k
+ else
+  echo 1
+ fi
+}
+fact $1

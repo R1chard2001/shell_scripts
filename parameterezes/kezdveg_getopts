@@ -1,0 +1,29 @@
+#!/bin/bash
+K="Nincs megadva"
+V="Nincs megadva"
+while getopts :ak:v: PARAM
+do
+ case $PARAM in
+  a)
+   K=0
+   V=1
+   ;;
+  v)
+   V=$OPTARG
+   ;;
+  k)
+   K=$OPTARG
+   ;;
+  :)
+   echo "A -${OPTARG} vár értéket! A program használata:"
+   echo "$0 [-k kezdőérték] [-v végérték] [-a]"
+   exit 1
+   ;;
+  *)
+   echo "Érvénytelen paraméter! A program használata:"
+   echo "$0 [-k kezdőérték] [-v végérték] [-a]"
+   exit 1
+   ;;
+  esac
+done
+echo "Kezdőérték: $K, végérték: $V"

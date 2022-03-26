@@ -1,0 +1,11 @@
+#!/bin/bash
+trap reaload_handler SIGHUP
+reaload_handler() {
+. params.conf
+}
+. params.conf
+for I in $(seq 1 1 1000)
+do
+ echo "$I  $$  $NEV"
+ sleep 5
+done
