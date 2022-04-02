@@ -1,0 +1,13 @@
+#!/bin/bash
+FILE="/etc/passwd"
+cat $FILE | awk -F: '
+BEGIN {
+ sum = 0;
+}
+{
+ sum = sum + $3;
+}
+END {
+ print("Összeg: " sum);
+ print("Átlag: " sum / NR);
+}'

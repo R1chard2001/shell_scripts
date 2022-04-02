@@ -1,0 +1,10 @@
+#!/bin/bash
+echo -n "File: "
+read F
+if [ ! -f $F ]
+then
+ echo "$F nem létezik!"
+ exit 1
+fi
+
+cat $F | sed "s/ez/az/g"

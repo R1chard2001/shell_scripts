@@ -1,0 +1,18 @@
+#!/bin/bash
+FILE=/etc/group
+cat $FILE | awk '
+BEGIN {
+ hossz = 0;
+ sor = "";
+}
+{
+ if (length($0) > hossz) {
+  hossz = length($0);
+  sor = $0;
+ }
+}
+END {
+ print("Sor hossza: " hossz);
+ print("Sor:");
+ print(sor);
+}'

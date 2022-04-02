@@ -1,0 +1,5 @@
+#!/bin/bash
+cat /etc/passwd | awk -F: '
+{
+ printf("User ID: %+6.2f %d %o %X %s\n", $3, $3, $3, $3, $1);
+}'
